@@ -48,22 +48,10 @@ This tool:
 
 ---
 
-## How to Use
-
-1. Launch the Silverlight app in browser
-2. Select **Source Language** and **Target Language**
-3. Click **"Scan for Missing Translations"**
-4. Edit missing values in the grid
-5. Click **"Save All"** to update database
+**DISCLAIMER: SILVERLIGHT IS DEPRECATED**  
+> Microsoft ended support for **Silverlight in October 2021**.  
+> This project uses **legacy technology** and **will not work in modern browsers** without the Silverlight plugin (no longer supported).  
+> **For archival/portfolio purposes only.**  
+> **Do not use in production.**
 
 ---
-
-## Setup (Legacy Silverlight App)
-
-> Requires: **IIS + Silverlight Plugin + SQL Server**
-
-```bash
-1. Deploy .xap file to web server
-2. Configure connection string in web.config
-3. Ensure Silverlight plugin is enabled in browser
-4. Access via http://yoursite.com/ClientBin/App.xap
