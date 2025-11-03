@@ -1,0 +1,1674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication
+    Name="LightSwitchServiceApplication"
+    Version="1.0.0.0">
+    <ServiceApplication.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+    </ServiceApplication.Attributes>
+  </ServiceApplication>
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:ApplicationData"
+    Name="ApplicationDataMapping" />
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:PlottingSchemeTranslatorReview"
+    Name="PlottingSchemeTranslatorReviewDataService">
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="DataProviderName"
+        Value="c6882346-e592-4da5-80ba-d2eadcda0359" />
+      <ConnectionProperty
+        Name="DataSourceName"
+        Value="98fbe4d8-5583-4233-b219-70ff8c7fbbbd" />
+      <ConnectionProperty
+        Name="ProviderInvariantName"
+        Value="MySql.Data.MySqlClient" />
+      <ConnectionProperty
+        Name="SafeConnectionString"
+        Value="server=192.168.2.20;User Id=vilani;password=password;database=vilanimartdev" />
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="78eda604-311e-425c-a4bd-5d8415b95cea" />
+      <ConnectionProperty
+        Name="ProviderManifestToken"
+        Value="5.5" />
+    </DataService.ConnectionProperties>
+    <EntitySetMapping
+      EntitySet="common_developerlists">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="common_developerlist" />
+        <SsdlProperty
+          Name="DeveloperID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[DeveloperID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="UserID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[UserID]"
+          Type="int" />
+        <SsdlProperty
+          Name="FoundationDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[FoundationDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="IsBuilder"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[IsBuilder]"
+          Type="bit" />
+        <SsdlProperty
+          Name="IsPlotter"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[IsPlotter]"
+          Type="bit" />
+        <SsdlProperty
+          Name="LogoImage"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[LogoImage]"
+          Type="mediumblob" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="Telephone1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[Telephone1]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="Telephone2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[Telephone2]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="Mobile1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[Mobile1]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="Mobile2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[Mobile2]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Email"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[Email]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Website"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[Website]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[IsTranslated]"
+          Type="bit" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          PropertyName="OriginalLanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="common_developerlist_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="common_developerlist_translate" />
+        <SsdlProperty
+          Name="DeveloperTranslateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[DeveloperTranslateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="DeveloperName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[DeveloperName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="200"
+          Name="CompanyName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[CompanyName]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="AboutUs"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[AboutUs]"
+          Type="longtext" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="ContactPersonName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[ContactPersonName]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[Description]"
+          Type="longtext" />
+        <SsdlProperty
+          Name="CreateDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[CreateDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_developerlist_translate/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="True"
+          PropertyName="LanguageID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="DeveloperID"
+          Nullable="True"
+          PropertyName="DeveloperID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="common_officeaddresses">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="common_officeaddress" />
+        <SsdlProperty
+          Name="OfficeAddressID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[OfficeAddressID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="LocalAreaID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[LocalAreaID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[Description]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="Latitude"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[Latitude]"
+          Type="double" />
+        <SsdlProperty
+          Name="Longitude"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[Longitude]"
+          Type="double" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[IsTranslated]"
+          Type="bit" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="DeveloperID"
+          Nullable="True"
+          PropertyName="DeveloperID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          PropertyName="OriginalLanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="common_officeaddress_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="common_officeaddress_translate" />
+        <SsdlProperty
+          Name="OfficeAddressTranslateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[OfficeAddressTranslateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="LocationName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[LocationName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="StreetNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[StreetNumber]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="StreetName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[StreetName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="UnitNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[UnitNumber]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="ZipCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[ZipCode]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="NearestLandmark"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[NearestLandmark]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="300"
+          Name="AddressLine"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[AddressLine]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_officeaddress_translate/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="OfficeAddressID"
+          Nullable="False"
+          PropertyName="OfficeAddressID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="False"
+          PropertyName="LanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="common_propertycontactpersons">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="common_propertycontactperson" />
+        <SsdlProperty
+          Name="ContactPersonID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[ContactPersonID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="Phone1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[Phone1]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="Phone2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[Phone2]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="Mobile1"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[Mobile1]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="Mobile2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[Mobile2]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Email"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[Email]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[OriginalLanguageID]"
+          Type="int" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[IsTranslated]"
+          Type="bit" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="DeveloperID"
+          Nullable="True"
+          PropertyName="DeveloperID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PlottingSchemeID"
+          Nullable="True"
+          PropertyName="PlottingSchemeID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PropertyID"
+          Nullable="True"
+          PropertyName="PropertyID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="common_propertycontactperson_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="common_propertycontactperson_translate" />
+        <SsdlProperty
+          Name="ContactPersonTranslateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[ContactPersonTranslateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="ContactPersonName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[ContactPersonName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="FullName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[FullName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="300"
+          Name="Address"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[Address]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:common_propertycontactperson_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="True"
+          PropertyName="LanguageID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ContactPersonID"
+          Nullable="True"
+          PropertyName="ContactPersonID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="plot_plotowners">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="plot_plotowner" />
+        <SsdlProperty
+          Name="PlotOwnerID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[PlotOwnerID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="FirstName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[FirstName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="LastName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[LastName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="400"
+          Name="Address"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[Address]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="Email"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[Email]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="Mobile"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[Mobile]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="Phone"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[Phone]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="ProfilePhoto"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[ProfilePhoto]"
+          Type="blob" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="ProfileImageURL"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[ProfileImageURL]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[OriginalLanguageID]"
+          Type="int" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner/Properties[IsTranslated]"
+          Type="bit" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="plot_plotowner_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="plot_plotowner_translate" />
+        <SsdlProperty
+          Name="PlotOwnerTranslateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[PlotOwnerTranslateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="FirstName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[FirstName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="MiddleName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[MiddleName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="LastName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[LastName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="300"
+          Name="AddressLine1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[AddressLine1]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="300"
+          Name="AddressLine2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[AddressLine2]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plotowner_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="True"
+          PropertyName="LanguageID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PlotOwnerID"
+          Nullable="True"
+          PropertyName="PlotOwnerID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="plot_plottingaddresses">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="plot_plottingaddress" />
+        <SsdlProperty
+          Name="PlottingAddressID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[PlottingAddressID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="LocalAreaID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[LocalAreaID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[Description]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="Latitude"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[Latitude]"
+          Type="double" />
+        <SsdlProperty
+          Name="Longitude"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[Longitude]"
+          Type="double" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[IsTranslated]"
+          Type="bit" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          PropertyName="OriginalLanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="plot_plottingaddress_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="plot_plottingaddress_translate" />
+        <SsdlProperty
+          Name="PlottingAddressTranslateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[PlottingAddressTranslateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="LocationName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[LocationName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="AddressLine"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[AddressLine]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="StreetNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[StreetNumber]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="StreetName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[StreetName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="UnitNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[UnitNumber]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="ZipCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[ZipCode]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="NearestLandmark"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[NearestLandmark]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingaddress_translate/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="PlottingAddressID"
+          Nullable="False"
+          PropertyName="PlottingAddressID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="False"
+          PropertyName="LanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="plot_plottingschemes">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="plot_plottingscheme" />
+        <SsdlProperty
+          Name="PlottingSchemeID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[PlottingSchemeID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="PackageTypeID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[PackageTypeID]"
+          Type="int" />
+        <SsdlProperty
+          Name="PlottingTypeID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[PlottingTypeID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="LocalAreaID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[LocalAreaID]"
+          Type="int" />
+        <SsdlProperty
+          Name="PlotAmenitiesID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[PlotAmenitiesID]"
+          Type="int" />
+        <SsdlProperty
+          Name="BookingAmount"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[BookingAmount]"
+          Type="double" />
+        <SsdlProperty
+          Name="DeveloperID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[DeveloperID]"
+          Type="int" />
+        <SsdlProperty
+          Name="SchemeHighlightsID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[SchemeHighlightsID]"
+          Type="int" />
+        <SsdlProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[OriginalLanguageID]"
+          Type="int" />
+        <SsdlProperty
+          Name="AmountAtDocumentation"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[AmountAtDocumentation]"
+          Type="double" />
+        <SsdlProperty
+          Name="PlottingStatusID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[PlottingStatusID]"
+          Type="int" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[IsTranslated]"
+          Type="bit" />
+        <SsdlProperty
+          Name="StartedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[StartedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="AmountPaidByDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[AmountPaidByDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="IsActive"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[IsActive]"
+          Type="bit" />
+        <SsdlProperty
+          Name="SchemeGmapArea"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme/Properties[SchemeGmapArea]"
+          Type="mediumtext" />
+        <SsdlForeignKeyProperty
+          Name="PlottingAddressID"
+          Nullable="True"
+          PropertyName="PlottingAddressID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="plot_plottingscheme_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="plot_plottingscheme_translate" />
+        <SsdlProperty
+          Name="PlottingSchemeTranslateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[PlottingSchemeTranslateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="300"
+          Name="SchemeName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[SchemeName]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="AboutScheme"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[AboutScheme]"
+          Type="longtext" />
+        <SsdlProperty
+          Name="Description"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[Description]"
+          Type="longtext" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:plot_plottingscheme_translate/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="True"
+          PropertyName="LanguageID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="PlottingSchemeID"
+          Nullable="True"
+          PropertyName="PlottingSchemeID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="realestate_properties">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="realestate_property" />
+        <SsdlProperty
+          Name="PropertyID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:realestate_property/Properties[PropertyID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="ProjectID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[ProjectID]"
+          Type="int" />
+        <SsdlProperty
+          Name="PropertyAddressID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:realestate_property/Properties[PropertyAddressID]"
+          Type="int" />
+        <SsdlProperty
+          Name="ListingTypeID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[ListingTypeID]"
+          Type="int" />
+        <SsdlProperty
+          Name="PropertyTypeID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[PropertyTypeID]"
+          Type="int" />
+        <SsdlProperty
+          Name="LocalAreaID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:realestate_property/Properties[LocalAreaID]"
+          Type="int" />
+        <SsdlProperty
+          Name="PropertyListerID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[PropertyListerID]"
+          Type="int" />
+        <SsdlProperty
+          Name="UserID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[UserID]"
+          Type="int" />
+        <SsdlProperty
+          Name="PropertyRatingID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[PropertyRatingID]"
+          Type="int" />
+        <SsdlProperty
+          Name="ListedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[ListedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="AmenitiesID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[AmenitiesID]"
+          Type="int" />
+        <SsdlProperty
+          Name="HomeApplianceID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[HomeApplianceID]"
+          Type="int" />
+        <SsdlProperty
+          Name="ConstructionDetailsID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[ConstructionDetailsID]"
+          Type="int" />
+        <SsdlProperty
+          Name="IsTranslated"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[IsTranslated]"
+          Type="bit" />
+        <SsdlProperty
+          Name="CreatedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[CreatedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="PlottingSchemeID"
+          Nullable="True"
+          PropertyName="PlottingSchemeID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="OriginalLanguageID"
+          Nullable="True"
+          PropertyName="OriginalLanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="realestate_property_translates">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="realestate_property_translate" />
+        <SsdlProperty
+          Name="RealEstatePropertyTranlateID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[RealEstatePropertyTranlateID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="PropertyTitle"
+          Nullable="False"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[PropertyTitle]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="PropertyName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[PropertyName]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="PropertyDescription"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[PropertyDescription]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="5000"
+          Name="DescriptionByLister"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[DescriptionByLister]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="2000"
+          Name="PropertyDetailedDescription"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[PropertyDetailedDescription]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="4000"
+          Name="ProjectDescriptionOfProperty"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[ProjectDescriptionOfProperty]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="4000"
+          Name="PropertyLocalityDescription"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[PropertyLocalityDescription]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="5000"
+          Name="TermsAndConditions"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[TermsAndConditions]"
+          Type="varchar" />
+        <SsdlProperty
+          Name="IsTranslationReviewed"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[IsTranslationReviewed]"
+          Type="bit" />
+        <SsdlProperty
+          Name="ModifiedDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[ModifiedDate]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="DeletedOn"
+          Nullable="True"
+          Property="LightSwitchCommonModule:realestate_property_translate/Properties[DeletedOn]"
+          Type="datetime" />
+        <SsdlForeignKeyProperty
+          Name="PropertyID"
+          Nullable="False"
+          PropertyName="PropertyID"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="LanguageID"
+          Nullable="False"
+          PropertyName="LanguageID"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="vilani_languages">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="vilanimartdev"
+          Table="vilani_language" />
+        <SsdlProperty
+          Name="LanguageID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:vilani_language/Properties[LanguageID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="LanguageName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:vilani_language/Properties[LanguageName]"
+          Type="varchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="Description1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:vilani_language/Properties[Description1]"
+          Type="varchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ContactPerson_Developer">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ContactPerson_Developer" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPerson_Developer]/Members[common_developerlist]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DeveloperID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPerson_Developer]/Members[common_propertycontactperson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DeveloperID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ContactPerson_PlottingScheme">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ContactPerson_PlottingScheme" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPerson_PlottingScheme]/Members[plot_plottingscheme]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingSchemeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPerson_PlottingScheme]/Members[common_propertycontactperson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingSchemeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ContactPerson_Property">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ContactPerson_Property" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPerson_Property]/Members[realestate_property]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PropertyID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPerson_Property]/Members[common_propertycontactperson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PropertyID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ContactPersonTranslate_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ContactPersonTranslate_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPersonTranslate_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_ContactPersonTranslate_VilaniLanguage]/Members[common_propertycontactperson_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Developer_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Developer_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_Developer_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_Developer_VilaniLanguage]/Members[common_developerlist]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OriginalLanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_DeveloperList_Language">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_DeveloperList_Language" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_DeveloperList_Language]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_DeveloperList_Language]/Members[common_developerlist_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_DeveloperTranslate_DeveloperList">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_DeveloperTranslate_DeveloperList" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_DeveloperTranslate_DeveloperList]/Members[common_developerlist]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DeveloperID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_DeveloperTranslate_DeveloperList]/Members[common_developerlist_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DeveloperID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_OfficeAddressID_Developer">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_OfficeAddressID_Developer" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressID_Developer]/Members[common_developerlist]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DeveloperID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressID_Developer]/Members[common_officeaddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DeveloperID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_OfficeAddressID_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_OfficeAddressID_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressID_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressID_VilaniLanguage]/Members[common_officeaddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OriginalLanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_OfficeAddressTranslate_OfficeAddress">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_OfficeAddressTranslate_OfficeAddress" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressTranslate_OfficeAddress]/Members[common_officeaddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OfficeAddressID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressTranslate_OfficeAddress]/Members[common_officeaddress_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OfficeAddressID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_OfficeAddressTranslate_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_OfficeAddressTranslate_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressTranslate_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_OfficeAddressTranslate_VilaniLanguage]/Members[common_officeaddress_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PlotOwnerTranslate_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PlotOwnerTranslate_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlotOwnerTranslate_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlotOwnerTranslate_VilaniLanguage]/Members[plot_plotowner_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PlottingAddress_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PlottingAddress_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingAddress_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingAddress_VilaniLanguage]/Members[plot_plottingaddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OriginalLanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PlottingAddressTranslate_PlottingAddress">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PlottingAddressTranslate_PlottingAddress" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingAddressTranslate_PlottingAddress]/Members[plot_plottingaddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingAddressID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingAddressTranslate_PlottingAddress]/Members[plot_plottingaddress_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingAddressID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PlottingAddressTranslate_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PlottingAddressTranslate_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingAddressTranslate_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingAddressTranslate_VilaniLanguage]/Members[plot_plottingaddress_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PlottingScheme_Language">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PlottingScheme_Language" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingScheme_Language]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingScheme_Language]/Members[plot_plottingscheme_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="fK_plottingscheme_PlottingAddress">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="fK_plottingscheme_PlottingAddress" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[fK_plottingscheme_PlottingAddress]/Members[plot_plottingaddress]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingAddressID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[fK_plottingscheme_PlottingAddress]/Members[plot_plottingscheme]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingAddressID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PlottingScheme_Translate">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PlottingScheme_Translate" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingScheme_Translate]/Members[plot_plottingscheme]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingSchemeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PlottingScheme_Translate]/Members[plot_plottingscheme_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingSchemeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Property_PlottingScheme">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Property_PlottingScheme" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_Property_PlottingScheme]/Members[plot_plottingscheme]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingSchemeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_Property_PlottingScheme]/Members[realestate_property]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlottingSchemeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Property_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Property_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_Property_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_Property_VilaniLanguage]/Members[realestate_property]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OriginalLanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PropertyTanslate_Property">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PropertyTanslate_Property" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PropertyTanslate_Property]/Members[realestate_property]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PropertyID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PropertyTanslate_Property]/Members[realestate_property_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PropertyID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_PropertyTanslate_VilaniLanguage">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_PropertyTanslate_VilaniLanguage" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PropertyTanslate_VilaniLanguage]/Members[vilani_language]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FK_PropertyTanslate_VilaniLanguage]/Members[realestate_property_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="LanguageID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FKContactPersonTranslate_ContactPerson">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FKContactPersonTranslate_ContactPerson" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FKContactPersonTranslate_ContactPerson]/Members[common_propertycontactperson]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContactPersonID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FKContactPersonTranslate_ContactPerson]/Members[common_propertycontactperson_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ContactPersonID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FKPlotOwnerTranslate_PlotOwner">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FKPlotOwnerTranslate_PlotOwner" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FKPlotOwnerTranslate_PlotOwner]/Members[plot_plotowner]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlotOwnerID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:PlottingSchemeTranslatorReview/Members[FKPlotOwnerTranslate_PlotOwner]/Members[plot_plotowner_translate]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PlotOwnerID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ModelFragment>

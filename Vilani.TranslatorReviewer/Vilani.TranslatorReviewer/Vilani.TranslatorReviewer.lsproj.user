@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <EnableENC>False</EnableENC>
+    <ProjectView>ProjectFiles</ProjectView>
+    <ServerPort>1257</ServerPort>
+    <EncryptedPublishConnectionString />
+    <EncryptedPublishSchemaConnectionString />
+    <EncryptedClientConnectionString>
+    </EncryptedClientConnectionString>
+    <EncryptedAdministratorPassword />
+    <PublishUserName />
+    <EncryptedPublishUserPassword />
+    <SchemaManagementSchemaBuildState>0</SchemaManagementSchemaBuildState>
+    <SchemaManagementLastModelWriteTime>635141967095086780</SchemaManagementLastModelWriteTime>
+  </PropertyGroup>
+</Project>

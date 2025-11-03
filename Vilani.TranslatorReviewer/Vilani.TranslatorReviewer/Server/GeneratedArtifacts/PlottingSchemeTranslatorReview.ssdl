@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PlottingSchemeTranslatorReviewStore" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PlottingSchemeTranslatorReviewStore">
+    <EntitySet Name="common_developerlists" EntityType="PlottingSchemeTranslatorReviewStore.common_developerlist" store:Type="Tables" Schema="vilanimartdev" Table="common_developerlist" />
+    <EntitySet Name="common_developerlist_translates" EntityType="PlottingSchemeTranslatorReviewStore.common_developerlist_translate" store:Type="Tables" Schema="vilanimartdev" Table="common_developerlist_translate" />
+    <EntitySet Name="common_officeaddresses" EntityType="PlottingSchemeTranslatorReviewStore.common_officeaddress" store:Type="Tables" Schema="vilanimartdev" Table="common_officeaddress" />
+    <EntitySet Name="common_officeaddress_translates" EntityType="PlottingSchemeTranslatorReviewStore.common_officeaddress_translate" store:Type="Tables" Schema="vilanimartdev" Table="common_officeaddress_translate" />
+    <EntitySet Name="plot_plottingaddresses" EntityType="PlottingSchemeTranslatorReviewStore.plot_plottingaddress" store:Type="Tables" Schema="vilanimartdev" Table="plot_plottingaddress" />
+    <EntitySet Name="plot_plottingaddress_translates" EntityType="PlottingSchemeTranslatorReviewStore.plot_plottingaddress_translate" store:Type="Tables" Schema="vilanimartdev" Table="plot_plottingaddress_translate" />
+    <EntitySet Name="plot_plottingschemes" EntityType="PlottingSchemeTranslatorReviewStore.plot_plottingscheme" store:Type="Tables" Schema="vilanimartdev" Table="plot_plottingscheme" />
+    <EntitySet Name="plot_plottingscheme_translates" EntityType="PlottingSchemeTranslatorReviewStore.plot_plottingscheme_translate" store:Type="Tables" Schema="vilanimartdev" Table="plot_plottingscheme_translate" />
+    <EntitySet Name="realestate_properties" EntityType="PlottingSchemeTranslatorReviewStore.realestate_property" store:Type="Tables" Schema="vilanimartdev" Table="realestate_property" />
+    <EntitySet Name="realestate_property_translates" EntityType="PlottingSchemeTranslatorReviewStore.realestate_property_translate" store:Type="Tables" Schema="vilanimartdev" Table="realestate_property_translate" />
+    <EntitySet Name="vilani_languages" EntityType="PlottingSchemeTranslatorReviewStore.vilani_language" store:Type="Tables" Schema="vilanimartdev" Table="vilani_language" />
+    <EntitySet Name="common_propertycontactpersons" EntityType="PlottingSchemeTranslatorReviewStore.common_propertycontactperson" store:Type="Tables" Schema="vilanimartdev" Table="common_propertycontactperson" />
+    <EntitySet Name="common_propertycontactperson_translates" EntityType="PlottingSchemeTranslatorReviewStore.common_propertycontactperson_translate" store:Type="Tables" Schema="vilanimartdev" Table="common_propertycontactperson_translate" />
+    <EntitySet Name="plot_plotowners" EntityType="PlottingSchemeTranslatorReviewStore.plot_plotowner" store:Type="Tables" Schema="vilanimartdev" Table="plot_plotowner" />
+    <EntitySet Name="plot_plotowner_translates" EntityType="PlottingSchemeTranslatorReviewStore.plot_plotowner_translate" store:Type="Tables" Schema="vilanimartdev" Table="plot_plotowner_translate" />
+    <AssociationSet Name="FK_DeveloperTranslate_DeveloperList" Association="PlottingSchemeTranslatorReviewStore.FK_DeveloperTranslate_DeveloperList">
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+      <End Role="common_developerlist_translate" EntitySet="common_developerlist_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAddressID_Developer" Association="PlottingSchemeTranslatorReviewStore.FK_OfficeAddressID_Developer">
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+      <End Role="common_officeaddress" EntitySet="common_officeaddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAddressTranslate_OfficeAddress" Association="PlottingSchemeTranslatorReviewStore.FK_OfficeAddressTranslate_OfficeAddress">
+      <End Role="common_officeaddress" EntitySet="common_officeaddresses" />
+      <End Role="common_officeaddress_translate" EntitySet="common_officeaddress_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingAddressTranslate_PlottingAddress" Association="PlottingSchemeTranslatorReviewStore.FK_PlottingAddressTranslate_PlottingAddress">
+      <End Role="plot_plottingaddress" EntitySet="plot_plottingaddresses" />
+      <End Role="plot_plottingaddress_translate" EntitySet="plot_plottingaddress_translates" />
+    </AssociationSet>
+    <AssociationSet Name="fK_plottingscheme_PlottingAddress" Association="PlottingSchemeTranslatorReviewStore.fK_plottingscheme_PlottingAddress">
+      <End Role="plot_plottingaddress" EntitySet="plot_plottingaddresses" />
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingScheme_Translate" Association="PlottingSchemeTranslatorReviewStore.FK_PlottingScheme_Translate">
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+      <End Role="plot_plottingscheme_translate" EntitySet="plot_plottingscheme_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_PlottingScheme" Association="PlottingSchemeTranslatorReviewStore.FK_Property_PlottingScheme">
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+      <End Role="realestate_property" EntitySet="realestate_properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyTanslate_Property" Association="PlottingSchemeTranslatorReviewStore.FK_PropertyTanslate_Property">
+      <End Role="realestate_property" EntitySet="realestate_properties" />
+      <End Role="realestate_property_translate" EntitySet="realestate_property_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Developer_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_Developer_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAddressID_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_OfficeAddressID_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="common_officeaddress" EntitySet="common_officeaddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAddressTranslate_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_OfficeAddressTranslate_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="common_officeaddress_translate" EntitySet="common_officeaddress_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingAddress_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_PlottingAddress_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="plot_plottingaddress" EntitySet="plot_plottingaddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingAddressTranslate_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_PlottingAddressTranslate_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="plot_plottingaddress_translate" EntitySet="plot_plottingaddress_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingScheme_Language" Association="PlottingSchemeTranslatorReviewStore.FK_PlottingScheme_Language">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="plot_plottingscheme_translate" EntitySet="plot_plottingscheme_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_Property_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="realestate_property" EntitySet="realestate_properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyTanslate_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_PropertyTanslate_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="realestate_property_translate" EntitySet="realestate_property_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeveloperList_Language" Association="PlottingSchemeTranslatorReviewStore.FK_DeveloperList_Language">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="common_developerlist_translate" EntitySet="common_developerlist_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPerson_Developer" Association="PlottingSchemeTranslatorReviewStore.FK_ContactPerson_Developer">
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPerson_PlottingScheme" Association="PlottingSchemeTranslatorReviewStore.FK_ContactPerson_PlottingScheme">
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPerson_Property" Association="PlottingSchemeTranslatorReviewStore.FK_ContactPerson_Property">
+      <End Role="realestate_property" EntitySet="realestate_properties" />
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPersonTranslate_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_ContactPersonTranslate_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="common_propertycontactperson_translate" EntitySet="common_propertycontactperson_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FKContactPersonTranslate_ContactPerson" Association="PlottingSchemeTranslatorReviewStore.FKContactPersonTranslate_ContactPerson">
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+      <End Role="common_propertycontactperson_translate" EntitySet="common_propertycontactperson_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlotOwnerTranslate_VilaniLanguage" Association="PlottingSchemeTranslatorReviewStore.FK_PlotOwnerTranslate_VilaniLanguage">
+      <End Role="vilani_language" EntitySet="vilani_languages" />
+      <End Role="plot_plotowner_translate" EntitySet="plot_plotowner_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FKPlotOwnerTranslate_PlotOwner" Association="PlottingSchemeTranslatorReviewStore.FKPlotOwnerTranslate_PlotOwner">
+      <End Role="plot_plotowner" EntitySet="plot_plotowners" />
+      <End Role="plot_plotowner_translate" EntitySet="plot_plotowner_translates" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="common_developerlist">
+    <Key>
+      <PropertyRef Name="DeveloperID" />
+    </Key>
+    <Property Name="DeveloperID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="FoundationDate" Type="datetime" />
+    <Property Name="IsBuilder" Type="bit" />
+    <Property Name="IsPlotter" Type="bit" />
+    <Property Name="LogoImage" Type="mediumblob" />
+    <Property Name="Telephone1" Type="varchar" MaxLength="15" />
+    <Property Name="Telephone2" Type="varchar" MaxLength="15" />
+    <Property Name="Mobile1" Type="varchar" MaxLength="15" />
+    <Property Name="Mobile2" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Website" Type="varchar" MaxLength="50" />
+    <Property Name="IsTranslated" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="OriginalLanguageID" Type="int" />
+  </EntityType>
+  <EntityType Name="common_developerlist_translate">
+    <Key>
+      <PropertyRef Name="DeveloperTranslateID" />
+    </Key>
+    <Property Name="DeveloperTranslateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeveloperName" Type="varchar" MaxLength="45" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="200" />
+    <Property Name="AboutUs" Type="longtext" />
+    <Property Name="ContactPersonName" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="longtext" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="DeveloperID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+  </EntityType>
+  <EntityType Name="common_officeaddress">
+    <Key>
+      <PropertyRef Name="OfficeAddressID" />
+    </Key>
+    <Property Name="OfficeAddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocalAreaID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Latitude" Type="double" />
+    <Property Name="Longitude" Type="double" />
+    <Property Name="IsTranslated" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="DeveloperID" Type="int" />
+    <Property Name="OriginalLanguageID" Type="int" />
+  </EntityType>
+  <EntityType Name="common_officeaddress_translate">
+    <Key>
+      <PropertyRef Name="OfficeAddressTranslateID" />
+    </Key>
+    <Property Name="OfficeAddressTranslateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="varchar" MaxLength="50" />
+    <Property Name="StreetNumber" Type="varchar" MaxLength="45" />
+    <Property Name="StreetName" Type="varchar" MaxLength="100" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="45" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="45" />
+    <Property Name="NearestLandmark" Type="varchar" MaxLength="100" />
+    <Property Name="AddressLine" Type="varchar" MaxLength="300" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="OfficeAddressID" Type="int" Nullable="false" />
+    <Property Name="LanguageID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plot_plottingaddress">
+    <Key>
+      <PropertyRef Name="PlottingAddressID" />
+    </Key>
+    <Property Name="PlottingAddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocalAreaID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Latitude" Type="double" />
+    <Property Name="Longitude" Type="double" />
+    <Property Name="IsTranslated" Type="bit" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="OriginalLanguageID" Type="int" />
+  </EntityType>
+  <EntityType Name="plot_plottingaddress_translate">
+    <Key>
+      <PropertyRef Name="PlottingAddressTranslateID" />
+    </Key>
+    <Property Name="PlottingAddressTranslateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="varchar" MaxLength="50" />
+    <Property Name="AddressLine" Type="varchar" MaxLength="500" />
+    <Property Name="StreetNumber" Type="varchar" MaxLength="45" />
+    <Property Name="StreetName" Type="varchar" MaxLength="100" />
+    <Property Name="UnitNumber" Type="varchar" MaxLength="45" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="45" />
+    <Property Name="NearestLandmark" Type="varchar" MaxLength="100" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="PlottingAddressID" Type="int" Nullable="false" />
+    <Property Name="LanguageID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plot_plottingscheme">
+    <Key>
+      <PropertyRef Name="PlottingSchemeID" />
+    </Key>
+    <Property Name="PlottingSchemeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PackageTypeID" Type="int" />
+    <Property Name="BookingAmount" Type="double" />
+    <Property Name="DeveloperID" Type="int" />
+    <Property Name="LocalAreaID" Type="int" />
+    <Property Name="StartedDate" Type="datetime" />
+    <Property Name="AmountAtDocumentation" Type="double" />
+    <Property Name="AmountPaidByDate" Type="datetime" />
+    <Property Name="SchemeHighlightsID" Type="int" />
+    <Property Name="PlottingStatusID" Type="int" />
+    <Property Name="PlotAmenitiesID" Type="int" />
+    <Property Name="OriginalLanguageID" Type="int" />
+    <Property Name="IsTranslated" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="PlottingTypeID" Type="smallint" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="SchemeGmapArea" Type="mediumtext" />
+    <Property Name="PlottingAddressID" Type="int" />
+  </EntityType>
+  <EntityType Name="plot_plottingscheme_translate">
+    <Key>
+      <PropertyRef Name="PlottingSchemeTranslateID" />
+    </Key>
+    <Property Name="PlottingSchemeTranslateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SchemeName" Type="varchar" MaxLength="300" />
+    <Property Name="AboutScheme" Type="longtext" />
+    <Property Name="Description" Type="longtext" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="PlottingSchemeID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+  </EntityType>
+  <EntityType Name="realestate_property">
+    <Key>
+      <PropertyRef Name="PropertyID" />
+    </Key>
+    <Property Name="PropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="PropertyAddressID" Type="int" Nullable="false" />
+    <Property Name="ListingTypeID" Type="int" />
+    <Property Name="PropertyTypeID" Type="int" />
+    <Property Name="LocalAreaID" Type="int" Nullable="false" />
+    <Property Name="PropertyListerID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="PropertyRatingID" Type="int" />
+    <Property Name="ListedDate" Type="datetime" />
+    <Property Name="AmenitiesID" Type="int" />
+    <Property Name="HomeApplianceID" Type="int" />
+    <Property Name="ConstructionDetailsID" Type="int" />
+    <Property Name="IsTranslated" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="PlottingSchemeID" Type="int" />
+    <Property Name="OriginalLanguageID" Type="int" />
+  </EntityType>
+  <EntityType Name="realestate_property_translate">
+    <Key>
+      <PropertyRef Name="RealEstatePropertyTranlateID" />
+    </Key>
+    <Property Name="RealEstatePropertyTranlateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyTitle" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="PropertyName" Type="varchar" MaxLength="100" />
+    <Property Name="PropertyDescription" Type="varchar" />
+    <Property Name="DescriptionByLister" Type="varchar" MaxLength="5000" />
+    <Property Name="PropertyDetailedDescription" Type="varchar" MaxLength="2000" />
+    <Property Name="ProjectDescriptionOfProperty" Type="varchar" MaxLength="4000" />
+    <Property Name="PropertyLocalityDescription" Type="varchar" MaxLength="4000" />
+    <Property Name="TermsAndConditions" Type="varchar" MaxLength="5000" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+    <Property Name="LanguageID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vilani_language">
+    <Key>
+      <PropertyRef Name="LanguageID" />
+    </Key>
+    <Property Name="LanguageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageName" Type="varchar" MaxLength="50" />
+    <Property Name="Description1" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="common_propertycontactperson">
+    <Key>
+      <PropertyRef Name="ContactPersonID" />
+    </Key>
+    <Property Name="ContactPersonID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Phone1" Type="varchar" MaxLength="16" />
+    <Property Name="Phone2" Type="varchar" MaxLength="16" />
+    <Property Name="Mobile1" Type="varchar" Nullable="false" MaxLength="16" />
+    <Property Name="Mobile2" Type="varchar" MaxLength="16" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalLanguageID" Type="int" />
+    <Property Name="IsTranslated" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="DeveloperID" Type="int" />
+    <Property Name="PlottingSchemeID" Type="int" />
+    <Property Name="PropertyID" Type="int" />
+  </EntityType>
+  <EntityType Name="common_propertycontactperson_translate">
+    <Key>
+      <PropertyRef Name="ContactPersonTranslateID" />
+    </Key>
+    <Property Name="ContactPersonTranslateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContactPersonName" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="300" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="ContactPersonID" Type="int" />
+  </EntityType>
+  <EntityType Name="plot_plotowner">
+    <Key>
+      <PropertyRef Name="PlotOwnerID" />
+    </Key>
+    <Property Name="PlotOwnerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="varchar" MaxLength="45" />
+    <Property Name="LastName" Type="varchar" MaxLength="45" />
+    <Property Name="Address" Type="varchar" MaxLength="400" />
+    <Property Name="Email" Type="varchar" MaxLength="45" />
+    <Property Name="Mobile" Type="varchar" MaxLength="45" />
+    <Property Name="Phone" Type="varchar" MaxLength="45" />
+    <Property Name="ProfilePhoto" Type="blob" />
+    <Property Name="ProfileImageURL" Type="varchar" MaxLength="45" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="OriginalLanguageID" Type="int" />
+    <Property Name="IsTranslated" Type="bit" />
+  </EntityType>
+  <EntityType Name="plot_plotowner_translate">
+    <Key>
+      <PropertyRef Name="PlotOwnerTranslateID" />
+    </Key>
+    <Property Name="PlotOwnerTranslateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="AddressLine1" Type="varchar" MaxLength="300" />
+    <Property Name="AddressLine2" Type="varchar" MaxLength="300" />
+    <Property Name="IsTranslationReviewed" Type="bit" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="PlotOwnerID" Type="int" />
+  </EntityType>
+  <Association Name="FK_DeveloperTranslate_DeveloperList">
+    <End Role="common_developerlist" Type="PlottingSchemeTranslatorReviewStore.common_developerlist" Multiplicity="0..1" />
+    <End Role="common_developerlist_translate" Type="PlottingSchemeTranslatorReviewStore.common_developerlist_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_developerlist">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="common_developerlist_translate">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficeAddressID_Developer">
+    <End Role="common_developerlist" Type="PlottingSchemeTranslatorReviewStore.common_developerlist" Multiplicity="0..1" />
+    <End Role="common_officeaddress" Type="PlottingSchemeTranslatorReviewStore.common_officeaddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_developerlist">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="common_officeaddress">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficeAddressTranslate_OfficeAddress">
+    <End Role="common_officeaddress" Type="PlottingSchemeTranslatorReviewStore.common_officeaddress" Multiplicity="1" />
+    <End Role="common_officeaddress_translate" Type="PlottingSchemeTranslatorReviewStore.common_officeaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_officeaddress">
+        <PropertyRef Name="OfficeAddressID" />
+      </Principal>
+      <Dependent Role="common_officeaddress_translate">
+        <PropertyRef Name="OfficeAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingAddressTranslate_PlottingAddress">
+    <End Role="plot_plottingaddress" Type="PlottingSchemeTranslatorReviewStore.plot_plottingaddress" Multiplicity="1" />
+    <End Role="plot_plottingaddress_translate" Type="PlottingSchemeTranslatorReviewStore.plot_plottingaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingaddress">
+        <PropertyRef Name="PlottingAddressID" />
+      </Principal>
+      <Dependent Role="plot_plottingaddress_translate">
+        <PropertyRef Name="PlottingAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fK_plottingscheme_PlottingAddress">
+    <End Role="plot_plottingaddress" Type="PlottingSchemeTranslatorReviewStore.plot_plottingaddress" Multiplicity="0..1" />
+    <End Role="plot_plottingscheme" Type="PlottingSchemeTranslatorReviewStore.plot_plottingscheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingaddress">
+        <PropertyRef Name="PlottingAddressID" />
+      </Principal>
+      <Dependent Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingScheme_Translate">
+    <End Role="plot_plottingscheme" Type="PlottingSchemeTranslatorReviewStore.plot_plottingscheme" Multiplicity="0..1" />
+    <End Role="plot_plottingscheme_translate" Type="PlottingSchemeTranslatorReviewStore.plot_plottingscheme_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Principal>
+      <Dependent Role="plot_plottingscheme_translate">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_PlottingScheme">
+    <End Role="plot_plottingscheme" Type="PlottingSchemeTranslatorReviewStore.plot_plottingscheme" Multiplicity="0..1" />
+    <End Role="realestate_property" Type="PlottingSchemeTranslatorReviewStore.realestate_property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Principal>
+      <Dependent Role="realestate_property">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyTanslate_Property">
+    <End Role="realestate_property" Type="PlottingSchemeTranslatorReviewStore.realestate_property" Multiplicity="1" />
+    <End Role="realestate_property_translate" Type="PlottingSchemeTranslatorReviewStore.realestate_property_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="realestate_property">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="realestate_property_translate">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Developer_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="common_developerlist" Type="PlottingSchemeTranslatorReviewStore.common_developerlist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="common_developerlist">
+        <PropertyRef Name="OriginalLanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficeAddressID_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="common_officeaddress" Type="PlottingSchemeTranslatorReviewStore.common_officeaddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="common_officeaddress">
+        <PropertyRef Name="OriginalLanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficeAddressTranslate_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="1" />
+    <End Role="common_officeaddress_translate" Type="PlottingSchemeTranslatorReviewStore.common_officeaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="common_officeaddress_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingAddress_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="plot_plottingaddress" Type="PlottingSchemeTranslatorReviewStore.plot_plottingaddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="plot_plottingaddress">
+        <PropertyRef Name="OriginalLanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingAddressTranslate_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="1" />
+    <End Role="plot_plottingaddress_translate" Type="PlottingSchemeTranslatorReviewStore.plot_plottingaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="plot_plottingaddress_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingScheme_Language">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="plot_plottingscheme_translate" Type="PlottingSchemeTranslatorReviewStore.plot_plottingscheme_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="plot_plottingscheme_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="realestate_property" Type="PlottingSchemeTranslatorReviewStore.realestate_property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="realestate_property">
+        <PropertyRef Name="OriginalLanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyTanslate_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="1" />
+    <End Role="realestate_property_translate" Type="PlottingSchemeTranslatorReviewStore.realestate_property_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="realestate_property_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeveloperList_Language">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="common_developerlist_translate" Type="PlottingSchemeTranslatorReviewStore.common_developerlist_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="common_developerlist_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPerson_Developer">
+    <End Role="common_developerlist" Type="PlottingSchemeTranslatorReviewStore.common_developerlist" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson" Type="PlottingSchemeTranslatorReviewStore.common_propertycontactperson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_developerlist">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPerson_PlottingScheme">
+    <End Role="plot_plottingscheme" Type="PlottingSchemeTranslatorReviewStore.plot_plottingscheme" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson" Type="PlottingSchemeTranslatorReviewStore.common_propertycontactperson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPerson_Property">
+    <End Role="realestate_property" Type="PlottingSchemeTranslatorReviewStore.realestate_property" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson" Type="PlottingSchemeTranslatorReviewStore.common_propertycontactperson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="realestate_property">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPersonTranslate_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson_translate" Type="PlottingSchemeTranslatorReviewStore.common_propertycontactperson_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKContactPersonTranslate_ContactPerson">
+    <End Role="common_propertycontactperson" Type="PlottingSchemeTranslatorReviewStore.common_propertycontactperson" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson_translate" Type="PlottingSchemeTranslatorReviewStore.common_propertycontactperson_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_propertycontactperson">
+        <PropertyRef Name="ContactPersonID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson_translate">
+        <PropertyRef Name="ContactPersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlotOwnerTranslate_VilaniLanguage">
+    <End Role="vilani_language" Type="PlottingSchemeTranslatorReviewStore.vilani_language" Multiplicity="0..1" />
+    <End Role="plot_plotowner_translate" Type="PlottingSchemeTranslatorReviewStore.plot_plotowner_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vilani_language">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="plot_plotowner_translate">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKPlotOwnerTranslate_PlotOwner">
+    <End Role="plot_plotowner" Type="PlottingSchemeTranslatorReviewStore.plot_plotowner" Multiplicity="0..1" />
+    <End Role="plot_plotowner_translate" Type="PlottingSchemeTranslatorReviewStore.plot_plotowner_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plotowner">
+        <PropertyRef Name="PlotOwnerID" />
+      </Principal>
+      <Dependent Role="plot_plotowner_translate">
+        <PropertyRef Name="PlotOwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

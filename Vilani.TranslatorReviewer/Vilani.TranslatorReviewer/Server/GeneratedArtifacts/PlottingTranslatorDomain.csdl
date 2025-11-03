@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="common_developerlist">
+    <Key>
+      <PropertyRef Name="DeveloperID" />
+    </Key>
+    <Property Name="DeveloperID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="FoundationDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="IsBuilder" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="IsPlotter" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="LogoImage" Type="Edm.Binary" MaxLength="16777215" ConcurrencyMode="Fixed" />
+    <Property Name="Telephone1" Type="Edm.String" MaxLength="15" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Telephone2" Type="Edm.String" MaxLength="15" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Mobile1" Type="Edm.String" MaxLength="15" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Mobile2" Type="Edm.String" MaxLength="15" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Email" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Website" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="OriginalLanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslated" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="CreatedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_propertycontactpersons" Relationship="LightSwitchApplication.FK_ContactPerson_Developer" ToRole="common_propertycontactperson" FromRole="common_developerlist" />
+    <NavigationProperty Name="common_developerlist_translates" Relationship="LightSwitchApplication.FK_DeveloperTranslate_DeveloperList" ToRole="common_developerlist_translate" FromRole="common_developerlist" />
+    <NavigationProperty Name="common_officeaddresses" Relationship="LightSwitchApplication.FK_OfficeAddressID_Developer" ToRole="common_officeaddress" FromRole="common_developerlist" />
+  </EntityType>
+  <EntityType Name="common_developerlist_translate">
+    <Key>
+      <PropertyRef Name="DeveloperTranslateID" />
+    </Key>
+    <Property Name="DeveloperTranslateID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="DeveloperName" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="CompanyName" Type="Edm.String" MaxLength="200" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="AboutUs" Type="Edm.String" MaxLength="Max" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="ContactPersonName" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="CreateDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslationReviewed" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeveloperID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_developerlist" Relationship="LightSwitchApplication.FK_DeveloperTranslate_DeveloperList" ToRole="common_developerlist" FromRole="common_developerlist_translate" />
+  </EntityType>
+  <EntityType Name="common_officeaddress">
+    <Key>
+      <PropertyRef Name="OfficeAddressID" />
+    </Key>
+    <Property Name="OfficeAddressID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocalAreaID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Latitude" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="Longitude" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="OriginalLanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslated" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="CreatedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeveloperID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_developerlist" Relationship="LightSwitchApplication.FK_OfficeAddressID_Developer" ToRole="common_developerlist" FromRole="common_officeaddress" />
+    <NavigationProperty Name="common_officeaddress_translates" Relationship="LightSwitchApplication.FK_OfficeAddressTranslate_OfficeAddress" ToRole="common_officeaddress_translate" FromRole="common_officeaddress" />
+  </EntityType>
+  <EntityType Name="common_officeaddress_translate">
+    <Key>
+      <PropertyRef Name="OfficeAddressTranslateID" />
+    </Key>
+    <Property Name="OfficeAddressTranslateID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="LocationName" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="StreetNumber" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="StreetName" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="UnitNumber" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="ZipCode" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="NearestLandmark" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="AddressLine" Type="Edm.String" MaxLength="300" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslationReviewed" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="CreatedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="OfficeAddressID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_officeaddress" Relationship="LightSwitchApplication.FK_OfficeAddressTranslate_OfficeAddress" ToRole="common_officeaddress" FromRole="common_officeaddress_translate" />
+  </EntityType>
+  <EntityType Name="common_propertycontactperson">
+    <Key>
+      <PropertyRef Name="ContactPersonID" />
+    </Key>
+    <Property Name="ContactPersonID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Phone1" Type="Edm.String" MaxLength="16" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Phone2" Type="Edm.String" MaxLength="16" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Mobile1" Type="Edm.String" Nullable="false" MaxLength="16" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Mobile2" Type="Edm.String" MaxLength="16" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Email" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="OriginalLanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslated" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="CreatedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeveloperID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PlottingSchemeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_developerlist" Relationship="LightSwitchApplication.FK_ContactPerson_Developer" ToRole="common_developerlist" FromRole="common_propertycontactperson" />
+    <NavigationProperty Name="plot_plottingscheme" Relationship="LightSwitchApplication.FK_ContactPerson_PlottingScheme" ToRole="plot_plottingscheme" FromRole="common_propertycontactperson" />
+    <NavigationProperty Name="common_propertycontactperson_translates" Relationship="LightSwitchApplication.FKContactPersonTranslate_ContactPerson" ToRole="common_propertycontactperson_translate" FromRole="common_propertycontactperson" />
+  </EntityType>
+  <EntityType Name="common_propertycontactperson_translate">
+    <Key>
+      <PropertyRef Name="ContactPersonTranslateID" />
+    </Key>
+    <Property Name="ContactPersonTranslateID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ContactPersonName" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="FullName" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Address" Type="Edm.String" MaxLength="300" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="CreatedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslationReviewed" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="ContactPersonID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_propertycontactperson" Relationship="LightSwitchApplication.FKContactPersonTranslate_ContactPerson" ToRole="common_propertycontactperson" FromRole="common_propertycontactperson_translate" />
+  </EntityType>
+  <EntityType Name="plot_plottingaddress">
+    <Key>
+      <PropertyRef Name="PlottingAddressID" />
+    </Key>
+    <Property Name="PlottingAddressID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocalAreaID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Latitude" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="Longitude" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="OriginalLanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslated" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="plot_plottingaddress_translates" Relationship="LightSwitchApplication.FK_PlottingAddressTranslate_PlottingAddress" ToRole="plot_plottingaddress_translate" FromRole="plot_plottingaddress" />
+    <NavigationProperty Name="plot_plottingschemes" Relationship="LightSwitchApplication.fK_plottingscheme_PlottingAddress" ToRole="plot_plottingscheme" FromRole="plot_plottingaddress" />
+  </EntityType>
+  <EntityType Name="plot_plottingaddress_translate">
+    <Key>
+      <PropertyRef Name="PlottingAddressTranslateID" />
+    </Key>
+    <Property Name="PlottingAddressTranslateID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="LocationName" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="AddressLine" Type="Edm.String" MaxLength="500" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="StreetNumber" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="StreetName" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="UnitNumber" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="ZipCode" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="NearestLandmark" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslationReviewed" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="PlottingAddressID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="plot_plottingaddress" Relationship="LightSwitchApplication.FK_PlottingAddressTranslate_PlottingAddress" ToRole="plot_plottingaddress" FromRole="plot_plottingaddress_translate" />
+  </EntityType>
+  <EntityType Name="plot_plottingscheme">
+    <Key>
+      <PropertyRef Name="PlottingSchemeID" />
+    </Key>
+    <Property Name="PlottingSchemeID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackageTypeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="BookingAmount" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="DeveloperID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="LocalAreaID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="StartedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="AmountAtDocumentation" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="AmountPaidByDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="SchemeHighlightsID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PlottingStatusID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="PlotAmenitiesID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="OriginalLanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslated" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="CreatedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="PlottingTypeID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="PlottingAddressID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="common_propertycontactpersons" Relationship="LightSwitchApplication.FK_ContactPerson_PlottingScheme" ToRole="common_propertycontactperson" FromRole="plot_plottingscheme" />
+    <NavigationProperty Name="plot_plottingaddress" Relationship="LightSwitchApplication.fK_plottingscheme_PlottingAddress" ToRole="plot_plottingaddress" FromRole="plot_plottingscheme" />
+    <NavigationProperty Name="plot_plottingscheme_translates" Relationship="LightSwitchApplication.FK_PlottingScheme_Translate" ToRole="plot_plottingscheme_translate" FromRole="plot_plottingscheme" />
+  </EntityType>
+  <EntityType Name="plot_plottingscheme_translate">
+    <Key>
+      <PropertyRef Name="PlottingSchemeTranslateID" />
+    </Key>
+    <Property Name="PlottingSchemeTranslateID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="SchemeName" Type="Edm.String" MaxLength="300" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="AboutScheme" Type="Edm.String" MaxLength="Max" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="Max" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslationReviewed" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="PlottingSchemeID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="plot_plottingscheme" Relationship="LightSwitchApplication.FK_PlottingScheme_Translate" ToRole="plot_plottingscheme" FromRole="plot_plottingscheme_translate" />
+  </EntityType>
+  <EntityType Name="realestate_propertyaddress">
+    <Key>
+      <PropertyRef Name="PropertyAddressID" />
+    </Key>
+    <Property Name="PropertyAddressID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocalAreaID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="Latitude" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="Longitude" Type="Edm.Double" ConcurrencyMode="Fixed" />
+    <Property Name="OriginalLanguageID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslated" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="realestate_propertyaddress_translates" Relationship="LightSwitchApplication.PAT_PA" ToRole="realestate_propertyaddress_translate" FromRole="realestate_propertyaddress" />
+  </EntityType>
+  <EntityType Name="realestate_propertyaddress_translate">
+    <Key>
+      <PropertyRef Name="RealestatePropertyAddressTranslateID" />
+    </Key>
+    <Property Name="RealestatePropertyAddressTranslateID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="LocationName" Type="Edm.String" MaxLength="50" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="StreetNumber" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="StreetName" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="UnitNumber" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="ZipCode" Type="Edm.String" MaxLength="45" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="NearestLandmark" Type="Edm.String" MaxLength="100" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="IsTranslationReviewed" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="ModifiedDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DeletedOn" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="AddressLine" Type="Edm.String" MaxLength="500" Unicode="false" ConcurrencyMode="Fixed" />
+    <Property Name="PropertyAddressID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="realestate_propertyaddress" Relationship="LightSwitchApplication.PAT_PA" ToRole="realestate_propertyaddress" FromRole="realestate_propertyaddress_translate" />
+  </EntityType>
+  <Association Name="FK_ContactPerson_Developer">
+    <End Role="common_developerlist" Type="LightSwitchApplication.common_developerlist" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson" Type="LightSwitchApplication.common_propertycontactperson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_developerlist">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPerson_PlottingScheme">
+    <End Role="plot_plottingscheme" Type="LightSwitchApplication.plot_plottingscheme" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson" Type="LightSwitchApplication.common_propertycontactperson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeveloperTranslate_DeveloperList">
+    <End Role="common_developerlist" Type="LightSwitchApplication.common_developerlist" Multiplicity="0..1" />
+    <End Role="common_developerlist_translate" Type="LightSwitchApplication.common_developerlist_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_developerlist">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="common_developerlist_translate">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficeAddressID_Developer">
+    <End Role="common_developerlist" Type="LightSwitchApplication.common_developerlist" Multiplicity="0..1" />
+    <End Role="common_officeaddress" Type="LightSwitchApplication.common_officeaddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_developerlist">
+        <PropertyRef Name="DeveloperID" />
+      </Principal>
+      <Dependent Role="common_officeaddress">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficeAddressTranslate_OfficeAddress">
+    <End Role="common_officeaddress" Type="LightSwitchApplication.common_officeaddress" Multiplicity="1" />
+    <End Role="common_officeaddress_translate" Type="LightSwitchApplication.common_officeaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_officeaddress">
+        <PropertyRef Name="OfficeAddressID" />
+      </Principal>
+      <Dependent Role="common_officeaddress_translate">
+        <PropertyRef Name="OfficeAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingAddressTranslate_PlottingAddress">
+    <End Role="plot_plottingaddress" Type="LightSwitchApplication.plot_plottingaddress" Multiplicity="1" />
+    <End Role="plot_plottingaddress_translate" Type="LightSwitchApplication.plot_plottingaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingaddress">
+        <PropertyRef Name="PlottingAddressID" />
+      </Principal>
+      <Dependent Role="plot_plottingaddress_translate">
+        <PropertyRef Name="PlottingAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fK_plottingscheme_PlottingAddress">
+    <End Role="plot_plottingaddress" Type="LightSwitchApplication.plot_plottingaddress" Multiplicity="0..1" />
+    <End Role="plot_plottingscheme" Type="LightSwitchApplication.plot_plottingscheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingaddress">
+        <PropertyRef Name="PlottingAddressID" />
+      </Principal>
+      <Dependent Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlottingScheme_Translate">
+    <End Role="plot_plottingscheme" Type="LightSwitchApplication.plot_plottingscheme" Multiplicity="0..1" />
+    <End Role="plot_plottingscheme_translate" Type="LightSwitchApplication.plot_plottingscheme_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plot_plottingscheme">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Principal>
+      <Dependent Role="plot_plottingscheme_translate">
+        <PropertyRef Name="PlottingSchemeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKContactPersonTranslate_ContactPerson">
+    <End Role="common_propertycontactperson" Type="LightSwitchApplication.common_propertycontactperson" Multiplicity="0..1" />
+    <End Role="common_propertycontactperson_translate" Type="LightSwitchApplication.common_propertycontactperson_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_propertycontactperson">
+        <PropertyRef Name="ContactPersonID" />
+      </Principal>
+      <Dependent Role="common_propertycontactperson_translate">
+        <PropertyRef Name="ContactPersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PAT_PA">
+    <End Role="realestate_propertyaddress" Type="LightSwitchApplication.realestate_propertyaddress" Multiplicity="1" />
+    <End Role="realestate_propertyaddress_translate" Type="LightSwitchApplication.realestate_propertyaddress_translate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="realestate_propertyaddress">
+        <PropertyRef Name="PropertyAddressID" />
+      </Principal>
+      <Dependent Role="realestate_propertyaddress_translate">
+        <PropertyRef Name="PropertyAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PlottingTranslatorDomainObjectContext" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="common_developerlists" EntityType="LightSwitchApplication.common_developerlist" />
+    <EntitySet Name="common_developerlist_translates" EntityType="LightSwitchApplication.common_developerlist_translate" />
+    <EntitySet Name="common_officeaddresses" EntityType="LightSwitchApplication.common_officeaddress" />
+    <EntitySet Name="common_officeaddress_translates" EntityType="LightSwitchApplication.common_officeaddress_translate" />
+    <EntitySet Name="common_propertycontactpersons" EntityType="LightSwitchApplication.common_propertycontactperson" />
+    <EntitySet Name="common_propertycontactperson_translates" EntityType="LightSwitchApplication.common_propertycontactperson_translate" />
+    <EntitySet Name="plot_plottingaddresses" EntityType="LightSwitchApplication.plot_plottingaddress" />
+    <EntitySet Name="plot_plottingaddress_translates" EntityType="LightSwitchApplication.plot_plottingaddress_translate" />
+    <EntitySet Name="plot_plottingschemes" EntityType="LightSwitchApplication.plot_plottingscheme" />
+    <EntitySet Name="plot_plottingscheme_translates" EntityType="LightSwitchApplication.plot_plottingscheme_translate" />
+    <EntitySet Name="realestate_propertyaddresses" EntityType="LightSwitchApplication.realestate_propertyaddress" />
+    <EntitySet Name="realestate_propertyaddress_translates" EntityType="LightSwitchApplication.realestate_propertyaddress_translate" />
+    <AssociationSet Name="FK_ContactPerson_Developer" Association="LightSwitchApplication.FK_ContactPerson_Developer">
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPerson_PlottingScheme" Association="LightSwitchApplication.FK_ContactPerson_PlottingScheme">
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeveloperTranslate_DeveloperList" Association="LightSwitchApplication.FK_DeveloperTranslate_DeveloperList">
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+      <End Role="common_developerlist_translate" EntitySet="common_developerlist_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAddressID_Developer" Association="LightSwitchApplication.FK_OfficeAddressID_Developer">
+      <End Role="common_developerlist" EntitySet="common_developerlists" />
+      <End Role="common_officeaddress" EntitySet="common_officeaddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAddressTranslate_OfficeAddress" Association="LightSwitchApplication.FK_OfficeAddressTranslate_OfficeAddress">
+      <End Role="common_officeaddress" EntitySet="common_officeaddresses" />
+      <End Role="common_officeaddress_translate" EntitySet="common_officeaddress_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingAddressTranslate_PlottingAddress" Association="LightSwitchApplication.FK_PlottingAddressTranslate_PlottingAddress">
+      <End Role="plot_plottingaddress" EntitySet="plot_plottingaddresses" />
+      <End Role="plot_plottingaddress_translate" EntitySet="plot_plottingaddress_translates" />
+    </AssociationSet>
+    <AssociationSet Name="fK_plottingscheme_PlottingAddress" Association="LightSwitchApplication.fK_plottingscheme_PlottingAddress">
+      <End Role="plot_plottingaddress" EntitySet="plot_plottingaddresses" />
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlottingScheme_Translate" Association="LightSwitchApplication.FK_PlottingScheme_Translate">
+      <End Role="plot_plottingscheme" EntitySet="plot_plottingschemes" />
+      <End Role="plot_plottingscheme_translate" EntitySet="plot_plottingscheme_translates" />
+    </AssociationSet>
+    <AssociationSet Name="FKContactPersonTranslate_ContactPerson" Association="LightSwitchApplication.FKContactPersonTranslate_ContactPerson">
+      <End Role="common_propertycontactperson" EntitySet="common_propertycontactpersons" />
+      <End Role="common_propertycontactperson_translate" EntitySet="common_propertycontactperson_translates" />
+    </AssociationSet>
+    <AssociationSet Name="PAT_PA" Association="LightSwitchApplication.PAT_PA">
+      <End Role="realestate_propertyaddress" EntitySet="realestate_propertyaddresses" />
+      <End Role="realestate_propertyaddress_translate" EntitySet="realestate_propertyaddress_translates" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="D:\VilaniRepositary\Technical\SourceCode\branches\trunk\VilaniTranlslatorReviewer\Vilani.TranslatorReviewer\Vilani.TranslatorReviewer\Common\Properties\Common.lsml" Checksum="0F9D2A020AFC4328FCD00B832A98AD2FEB6D3DDE4A13BBE79E221C37BEB33C80" />
+    <Document FullPath="D:\VilaniRepositary\Technical\SourceCode\branches\trunk\VilaniTranlslatorReviewer\Vilani.TranslatorReviewer\Vilani.TranslatorReviewer\Server\Properties\Service.lsml" Checksum="9C68E984A0B1E8DB23B48D96C633C187FB2B1C14FB64468BBEE013598F9401DA" />
+  </Documents>
+</ModelDocumentManifest>

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="PlottingTranslatorDomainObjectContext" StorageEntityContainer="PlottingTranslatorDomainStore">
+    <EntitySetMapping Name="common_developerlists">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.common_developerlist)">
+        <MappingFragment StoreEntitySet="common_developerlists">
+          <ScalarProperty Name="DeveloperID" ColumnName="DeveloperID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FoundationDate" ColumnName="FoundationDate" />
+          <ScalarProperty Name="IsBuilder" ColumnName="IsBuilder" />
+          <ScalarProperty Name="IsPlotter" ColumnName="IsPlotter" />
+          <ScalarProperty Name="LogoImage" ColumnName="LogoImage" />
+          <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+          <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+          <ScalarProperty Name="Mobile1" ColumnName="Mobile1" />
+          <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="OriginalLanguageID" ColumnName="OriginalLanguageID" />
+          <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="common_developerlist_translates">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.common_developerlist_translate)">
+        <MappingFragment StoreEntitySet="common_developerlist_translates">
+          <ScalarProperty Name="DeveloperTranslateID" ColumnName="DeveloperTranslateID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="DeveloperName" ColumnName="DeveloperName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="AboutUs" ColumnName="AboutUs" />
+          <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsTranslationReviewed" ColumnName="IsTranslationReviewed" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeveloperID" ColumnName="DeveloperID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="common_officeaddresses">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.common_officeaddress)">
+        <MappingFragment StoreEntitySet="common_officeaddresses">
+          <ScalarProperty Name="OfficeAddressID" ColumnName="OfficeAddressID" />
+          <ScalarProperty Name="LocalAreaID" ColumnName="LocalAreaID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="OriginalLanguageID" ColumnName="OriginalLanguageID" />
+          <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeveloperID" ColumnName="DeveloperID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="common_officeaddress_translates">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.common_officeaddress_translate)">
+        <MappingFragment StoreEntitySet="common_officeaddress_translates">
+          <ScalarProperty Name="OfficeAddressTranslateID" ColumnName="OfficeAddressTranslateID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="StreetNumber" ColumnName="StreetNumber" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="NearestLandmark" ColumnName="NearestLandmark" />
+          <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+          <ScalarProperty Name="IsTranslationReviewed" ColumnName="IsTranslationReviewed" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="OfficeAddressID" ColumnName="OfficeAddressID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="common_propertycontactpersons">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.common_propertycontactperson)">
+        <MappingFragment StoreEntitySet="common_propertycontactpersons">
+          <ScalarProperty Name="ContactPersonID" ColumnName="ContactPersonID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Mobile1" ColumnName="Mobile1" />
+          <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OriginalLanguageID" ColumnName="OriginalLanguageID" />
+          <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="DeveloperID" ColumnName="DeveloperID" />
+          <ScalarProperty Name="PlottingSchemeID" ColumnName="PlottingSchemeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="common_propertycontactperson_translates">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.common_propertycontactperson_translate)">
+        <MappingFragment StoreEntitySet="common_propertycontactperson_translates">
+          <ScalarProperty Name="ContactPersonTranslateID" ColumnName="ContactPersonTranslateID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsTranslationReviewed" ColumnName="IsTranslationReviewed" />
+          <ScalarProperty Name="ContactPersonID" ColumnName="ContactPersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plot_plottingaddresses">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.plot_plottingaddress)">
+        <MappingFragment StoreEntitySet="plot_plottingaddresses">
+          <ScalarProperty Name="PlottingAddressID" ColumnName="PlottingAddressID" />
+          <ScalarProperty Name="LocalAreaID" ColumnName="LocalAreaID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="OriginalLanguageID" ColumnName="OriginalLanguageID" />
+          <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plot_plottingaddress_translates">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.plot_plottingaddress_translate)">
+        <MappingFragment StoreEntitySet="plot_plottingaddress_translates">
+          <ScalarProperty Name="PlottingAddressTranslateID" ColumnName="PlottingAddressTranslateID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+          <ScalarProperty Name="StreetNumber" ColumnName="StreetNumber" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="NearestLandmark" ColumnName="NearestLandmark" />
+          <ScalarProperty Name="IsTranslationReviewed" ColumnName="IsTranslationReviewed" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="PlottingAddressID" ColumnName="PlottingAddressID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plot_plottingschemes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.plot_plottingscheme)">
+        <MappingFragment StoreEntitySet="plot_plottingschemes">
+          <ScalarProperty Name="PlottingSchemeID" ColumnName="PlottingSchemeID" />
+          <ScalarProperty Name="PackageTypeID" ColumnName="PackageTypeID" />
+          <ScalarProperty Name="BookingAmount" ColumnName="BookingAmount" />
+          <ScalarProperty Name="DeveloperID" ColumnName="DeveloperID" />
+          <ScalarProperty Name="LocalAreaID" ColumnName="LocalAreaID" />
+          <ScalarProperty Name="StartedDate" ColumnName="StartedDate" />
+          <ScalarProperty Name="AmountAtDocumentation" ColumnName="AmountAtDocumentation" />
+          <ScalarProperty Name="AmountPaidByDate" ColumnName="AmountPaidByDate" />
+          <ScalarProperty Name="SchemeHighlightsID" ColumnName="SchemeHighlightsID" />
+          <ScalarProperty Name="PlottingStatusID" ColumnName="PlottingStatusID" />
+          <ScalarProperty Name="PlotAmenitiesID" ColumnName="PlotAmenitiesID" />
+          <ScalarProperty Name="OriginalLanguageID" ColumnName="OriginalLanguageID" />
+          <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="PlottingTypeID" ColumnName="PlottingTypeID" />
+          <ScalarProperty Name="PlottingAddressID" ColumnName="PlottingAddressID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plot_plottingscheme_translates">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.plot_plottingscheme_translate)">
+        <MappingFragment StoreEntitySet="plot_plottingscheme_translates">
+          <ScalarProperty Name="PlottingSchemeTranslateID" ColumnName="PlottingSchemeTranslateID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="AboutScheme" ColumnName="AboutScheme" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsTranslationReviewed" ColumnName="IsTranslationReviewed" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="PlottingSchemeID" ColumnName="PlottingSchemeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="realestate_propertyaddresses">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.realestate_propertyaddress)">
+        <MappingFragment StoreEntitySet="realestate_propertyaddresses">
+          <ScalarProperty Name="PropertyAddressID" ColumnName="PropertyAddressID" />
+          <ScalarProperty Name="LocalAreaID" ColumnName="LocalAreaID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="OriginalLanguageID" ColumnName="OriginalLanguageID" />
+          <ScalarProperty Name="IsTranslated" ColumnName="IsTranslated" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="realestate_propertyaddress_translates">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.realestate_propertyaddress_translate)">
+        <MappingFragment StoreEntitySet="realestate_propertyaddress_translates">
+          <ScalarProperty Name="RealestatePropertyAddressTranslateID" ColumnName="RealestatePropertyAddressTranslateID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="StreetNumber" ColumnName="StreetNumber" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UnitNumber" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="NearestLandmark" ColumnName="NearestLandmark" />
+          <ScalarProperty Name="IsTranslationReviewed" ColumnName="IsTranslationReviewed" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+          <ScalarProperty Name="PropertyAddressID" ColumnName="PropertyAddressID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
